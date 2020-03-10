@@ -1,0 +1,11 @@
+//** USUARIO_ENCAMINHADO é o usuario que vai aparecer no agenda **//
+
+
+select CAC.USUARIO_encaminhado, CAC.*, rowid from CAC_CONTATO CAC where empresa = 2 and revenda = 1 and usuario_encaminhado = 260 and situacao != 'F'
+and contato = 43309
+
+update CAC_CONTATO CAC
+set CAC.USUARIO_ENCAMINHADO = 285
+where cac.empresa = 2
+and cac.revenda = 1
+and cac.usuario_ENCAMINHADO = 260
