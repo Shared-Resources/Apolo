@@ -1,0 +1,6 @@
+--agendamento não aparece na agenda do vendedor mais nao deixa adicionar novo,
+--provavel atendimento ja foi iniciado, verificar em dta_inicio_atendimento
+select ofa.dta_agendamento, ofa.dta_inicio_atendimento, ofa.*, rowid from OFI_ATENDIMENTO ofa where
+empresa = 2 and revenda = 1
+and vendedor_agendado = 172
+and DTA_AGENDAMENTO >= TO_DATE('19/06/2020', 'dd/mm/yyyy')
