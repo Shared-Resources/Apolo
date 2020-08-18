@@ -1,0 +1,16 @@
+ 
+   
+   select 
+   --count(*)
+  fdt.consumidor_final, fdt.*
+    from fat_dado_adicional fdt where contato in (select t.contato
+  from FAT_MOVIMENTO_CAPA t
+ where empresa = 2
+   and revenda = 1
+      --and cliente = 6937
+   and tipo_transacao = 'O21'
+   and serie_nota_fiscal = '3'
+   and dta_processamento > to_date('01/01/2020', 'dd/mm/yyyy')
+   and dta_processamento < to_date('01/08/2020', 'dd/mm/yyyy')) and consumidor_final is not null
+   and empresa = 2 and revenda = 1
+  and consumidor_final = 'N'-- and origem = 'P';
