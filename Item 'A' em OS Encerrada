@@ -1,0 +1,14 @@
+/* acha os itens com situação em Aberto na O.S - Exlcui */
+select t.situacao,t.item_estoque, t.*, t.rowid from OFI_PECA_OS t
+ where EMPRESA = 2 and REVENDA = 2
+ --and item_estoque = 7332
+ and CONTATO in (228075)
+and situacao = 'A';
+
+/*Muda siteação pra 9 */
+select t.item_estoque,t.item_estoque_pub_paf, t.situacao, t.quantidade,t.qtd_alocada, t.*, t.rowid
+  from ofi_peca_solicitada t
+ where empresa = 2 and revenda = 2
+---and item_estoque = 15273
+ and situacao = 2
+ and CONTATO = 228075
