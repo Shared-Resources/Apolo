@@ -9,4 +9,4 @@ select &EMP, &REV, &EMP || &EMP || ger_usuario.usuario, 100, ger_usuario.nome, '
         
 /* Vai criar o usuario vendedor em todas as empresas que o usuario tiver menu cadastrado
  O código de vendedor tem que ser colocado manual, esse caso foi ajustado para pegar o numero da empresa + numero da revenda + código de usuario para criar
- o código, em teoria não deve dar problema mas tem que se atentar em empresas que tenham códigos de vendedor muito alto */
+ o código, em teoria não deve dar problema mas tem que se atentar em empresas que tenham códigos de vendedor muito alto O departamento esta hardcoded em 100, mudar em casos especificos*/
