@@ -1,0 +1,12 @@
+insert into fat_vendedor 
+        (EMPRESA, REVENDA, VENDEDOR, DEPARTAMENTO, NOME, FUNCAO, USUARIO, CPF)
+select &EMP, &REV, &EMP || &EMP || ger_usuario.usuario, 100, ger_usuario.nome, 'V', ger_usuario.usuario, ger_usuario.cpf from ger_usuario, ger_usuario_revenda
+        where ger_usuario.usuario = ger_usuario_revenda.usuario and ger_usuario_revenda.empresa = &EMP and ger_usuario_revenda.revenda = &REV 
+        and ger_usuario.usuario not in
+        (select fat_vendedor.usuario from fat_vendedor where fat_vendedor.empresa = &EMP and fat_vendedor.revenda = &REV)
+        
+        
+        
+/* Vai criar o usuario vendedor em todas as empresas que o usuario tiver menu cadastrado
+ O código de vendedor tem que ser colocado manual, esse caso foi ajustado para pegar o numero da empresa + numero da revenda + código de usuario para criar
+ o código, em teoria não deve dar problema mas tem que se atentar em empresas que tenham códigos de vendedor muito alto */
